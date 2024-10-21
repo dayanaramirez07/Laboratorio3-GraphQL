@@ -1,0 +1,20 @@
+type Flight{
+    id: ID!
+    flightNumber: String!
+    origin: String!
+    destination: String!
+    departureTime: String!
+    arrivalTime: String!
+    price: Float!
+    passengers: Int!
+}
+
+type Query{
+    allFlights: [Flight]!
+    flightById(id: ID!): Flight
+    searchFlights(origin: String!, destination: String!): [Flight]
+}
+
+type Mutation{
+    addFlight(flightNumber: String!, origin: String!, destination: String!, departureTime: String!, arrivalTime: String!, price: Float!, passengers: Int!): Flight!
+}
